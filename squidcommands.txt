@@ -1,0 +1,16 @@
+## Headless virtual display
+sudo Xvfb :1 -screen 0 1024x768x24
+
+## Specify that display
+export DISPLAY=":1"
+
+## Compile and run sketch as Java
+processing-java --sketch="/home/pi/spacesquid/squidprime/" --force --output="/home/pi/spacesquid/squidprime/output_dir" --run
+
+## rsync up from laptop
+rsync -avz -e ssh  ~/spacesquid/ pi@raspberrypi.local:~/spacesquid/
+
+wifi: tothemoon
+
+Xlib: extension "RANDR" missing on display
+Cannot link shader program

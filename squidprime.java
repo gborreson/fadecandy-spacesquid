@@ -1,0 +1,1 @@
+/home/pi/spacesquid/squidprime/application.linux-armv6hf/squidprime
