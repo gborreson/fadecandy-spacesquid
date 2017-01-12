@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Envelope</title>
+		<script type="text/javascript" src="../../lib/nexusUI.js"></script>
+		<script>
+		
+			nx.onload = function() {
+
+				//send to ajax and define php relay script path
+				nx.sendsTo("ajax");
+				nx.setAjaxPath("../../lib/nexusOSCrelay.php");
+
+				nx.colorize("#0af");
+
+				envelope1.start();
+
+				button1.sendsTo("js")
+				button1.on('press', function(data) {
+					data==1 ? envelope1.start() : null;
+				})
+
+				dial1.sendsTo("js");
+				dial1.on('value',function(data) {
+					envelope1.duration = data*1000;
+				})
+
+			}
+		
+		</script>
+		
+	</head>
+	
+	<body>
+			
+		<canvas nx="envelope"></canvas>
+
+		<br><br>
+		<canvas nx="button"></canvas><br>
+		trigger envelope<br>
+		<br>
+		<canvas nx="dial"></canvas><br>
+		speed of envelope<br>
+
+	
+	</body>
+	
+</html>

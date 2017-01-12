@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<title>String</title>
+		<script type="text/javascript" src="../../lib/nexusUI.js"></script>
+		<script>
+		
+			nx.onload = function() {
+
+				//send to ajax and define php relay script path
+				nx.sendsTo("ajax");
+				nx.setAjaxPath("../../lib/nexusOSCrelay.php");
+
+				string1.setStrings(10);
+				string2.setStrings(3);
+
+			}
+
+
+		</script>
+		
+	</head>
+	
+	<body style="margin:20px">
+			
+		<canvas nx="string" style="width:600px;height:400px"></canvas>
+
+		<canvas nx="string" style="width:300px;height:400px"></canvas>
+	
+	
+	</body>
+	
+</html>

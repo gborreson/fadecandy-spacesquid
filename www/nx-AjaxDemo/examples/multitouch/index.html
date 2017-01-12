@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Multitouch</title>
+		<script type="text/javascript" src="../../lib/nexusUI.js"></script>
+		<script>
+		
+			nx.onload = function() {
+
+				//send to ajax and define php relay script path
+				nx.sendsTo("ajax");
+				nx.setAjaxPath("../../lib/nexusOSCrelay.php");
+				
+				nx.colorize("#0af");
+
+				multitouch2.mode = "matrix";
+				multitouch2.cols = 5;
+				multitouch2.rows = 10;
+				multitouch2.matrixLabels = [ "A", "B", "C" ];
+				multitouch2.draw();
+
+
+				multitouch3.mode = "matrix";
+				multitouch3.cols = 5;
+				multitouch3.rows = 10;
+				multitouch3.matrixLabels = [ "A", "B", "C" ];
+				multitouch3.draw();
+			}
+
+		</script>
+
+
+		
+	</head>
+	
+	<body>
+		
+		<canvas nx="multitouch" style="width:450px;height:900px;"></canvas>
+		
+		<canvas nx="multitouch" style="width:450px;height:900px;"></canvas>
+		
+		<canvas nx="multitouch" style="width:250px;height:500px;"></canvas>
+
+
+	</body>
+	
+</html>

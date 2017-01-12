@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>:: Nexus Ajax Demo ::</title>
+	<script type="text/javascript" src="lib/nexusUI.js"></script>
+	<meta name="viewport" content="width=device-width, user-scalable=no" />
+
+	<script>
+		
+		nx.onload = function() {
+			nx.colorize("#0af");
+			nx.sendsTo("ajax");
+			nx.setAjaxPath("lib/nexusOSCRelay.php");
+		gamma.colors.accent="#aaa";
+		gamma.val.value=.5;
+		gamma.draw();
+                red.colors.accent="#f00";
+		red.colors.border="#f00";
+		red.val.value=0.7;
+		red.draw();
+                green.colors.accent="#0f0";
+		green.val.value=0.7;
+		green.draw();
+                blue.colors.accent="#00f";
+		blue.val.value=0.7;
+		blue.draw();
+		bgRed.colors.accent="#f00";
+                bgRed.val.value=0;
+                bgRed.draw();
+                bgGreen.colors.accent="#0f0";
+                bgGreen.val.value=0;
+                bgGreen.draw();
+                bgBlue.colors.accent="#00f";
+                bgBlue.val.value=0;
+                bgBlue.draw();
+		opacity.val.value=0.7;
+		opacity.draw();
+		minSize.val.value=0.4;
+		minSize.draw();
+		sizeScale.val.value=0.3;
+		sizeScale.draw();
+		decay.val.value=0.5;
+		decay.draw();
+		gain.val.value=0.32;
+		gain.draw();
+		}
+	</script>
+
+</head>
+<body>
+	
+	<!-- Layout all of the UI Elements as Canvas Objects. -->
+	Whitepoint<br>
+	<canvas nx="slider" width=50 height=200 id="gamma" label="Gamma"></canvas>
+	<canvas nx="slider" width=50 height=200 id="red" label="Red"></canvas>
+	<canvas nx="slider" width=50 height=200 id="green" label="Green"></canvas>
+	<canvas nx="slider" width=50 height=200 id="blue" label="Blue"></canvas>
+	<br><br>
+	Background<br>
+	<canvas nx="slider" width=50 height=200 id="bgRed" label="BG Red"></canvas>
+	<canvas nx="slider" width=50 height=200 id="bgGreen" label="BG Green"></canvas>
+	<canvas nx="slider" width=50 height=200 id="bgBlue" label="BG Blue"></canvas>
+	<br><br>
+	Effect<br>
+	<canvas nx="slider" width=50 height=200 id="opacity" label="Opacity"></canvas>
+	<canvas nx="slider" width=50 height=200 id="minSize" label="Min Size"></canvas>
+	<canvas nx="slider" width=50 height=200 id="sizeScale" label="Size Scale"></canvas>
+	<canvas nx="slider" width=50 height=200 id="decay" label="Decay"></canvas>
+	<canvas nx="slider" width=50 height=200 id="gain" label="Gain"></canvas>
+</body>	
+</html>

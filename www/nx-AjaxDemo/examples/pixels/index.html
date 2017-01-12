@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Pixels</title>
+		<script type="text/javascript" src="../../lib/nexusUI.js"></script>
+		<script>
+		
+			nx.onload = function() {
+
+			//send to ajax and define php relay script path
+			nx.sendsTo("ajax");
+			nx.setAjaxPath("../../lib/nexusOSCrelay.php");
+
+			colors1.sendsTo("js");
+			toggle1.sendsTo("js");
+			
+			pixels1.dim = { x: 8, y: 8 };
+			pixels1.init();
+			
+			colors1.localTransmit = function(data) {
+				pixels1.colors.accent = "rgb("+data.r+","+data.g+","+data.b+")"
+			}
+
+			toggle1.localTransmit = function(data) {
+				if (data==1) {
+					pixels1.mode = "read";
+				} else {
+					pixels1.mode = "write";
+				}
+			}
+			
+		}
+		
+	</script>
+
+</head>
+<body>
+
+	<canvas nx="pixels"></canvas>
+	<canvas nx="colors"></canvas>
+	<canvas nx="toggle"></canvas> read on/off
+	
+</body>
+</html>
