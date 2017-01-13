@@ -9,8 +9,3 @@ processing-java --sketch="/home/pi/spacesquid/squidprime/" --force --output="/ho
 
 ## rsync up from laptop
 rsync -avz -e ssh  ~/spacesquid/ pi@raspberrypi.local:~/spacesquid/
-
-wifi: tothemoon
-
-Xlib: extension "RANDR" missing on display
-Cannot link shader program
