@@ -11,3 +11,14 @@ It would have been very difficult to correctly pre-calibrate the responsiveness 
 The Processing sketch was derived (quite directly) from FFT examples provided in the fadecandy-master repo, with some modifications to add OSC hooks for its key parameters and a few minor customizations.
 
 The project timeline was three weeks from concept to installation. Pictures & video to be added.
+
+## Resources
+
+**[FadeCandy](https://github.com/scanlime/fadecandy)**: I found this WS2812B LED controller, its libraries and its server to be particularly easy to use, built on the Open Pixel Control protocol. My sketch is based very closely on [this example](https://github.com/scanlime/fadecandy/tree/master/examples/processing/grid32x16z_particle_fft_input), and the [other Processing examples](https://github.com/scanlime/fadecandy/tree/master/examples/processing) are really useful. These sketches can be used with other OPC-compatible controllers, or with [Open Lighting Architecture](https://www.openlighting.org/ola/) for a much wider range of controllers.
+
+**[Running Processing headless on a Raspberry Pi](https://nocduro.ca/2016/01/06/running-an-exported-processing-3-sketch-on-a-headless-raspberry-pi/)**: solves many of the inherent "gotchas" with running Processing on Linux without an attached display. The comments include updates for Raspbian Jesse.
+
+**[Using a Pi 3 as a Wireless Access Point](https://frillip.com/using-your-raspberry-pi-3-as-a-wifi-access-point-with-hostapd/)**: I used my own self-contained Wi-Fi network to eliminate reliance on spotty Wi-Fi on site. I was able to fully test everything from home, so all I needed on arrival was power.
+
+**[NexusUI](https://github.com/lsu-emdm/nexusUI/)**: Originally I was using OSC iPhone apps, but this approach wound up being more flexible and universal across multiple devices. In case the artists found the installation distracting, I gave them instructions for how to access to control panel from their phones so they could turn it down, change the balance, etc.. The [nx-AjaxDemo](https://github.com/lsu-emdm/nx-AjaxDemo) provides the PHP OSC handler for the front-end JavaScript UI, and has a lot of useful examples (though with an earlier version of the UI).
+
