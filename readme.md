@@ -14,9 +14,19 @@ The project timeline was three weeks from concept to installation.
 
 To do: Add Wi-Fi configuration, pictures & video, and a whole lot of code cleanup.
 
+## Description of important pieces
+
+www/squidcontrol/index.html - NexusUI JS control panel with sliders for important variables, which makes AJAX calls to nexusOSCRelay.php whenever a widget changes.
+
+www/squidcontrol/lib/nexusOSCRelay.php - Receives AJAX calls from above, forwards on widget data as OSC to squidprime.pde.
+
+squidprime/squidprime.pde - Receives OSC calls via OscP5, listens and analyzes with Minim, produces visual effects. Based very closely on [this example](https://github.com/scanlime/fadecandy/tree/master/examples/processing/grid32x16z_particle_fft_input) from the FadeCandy Processing examples.
+
+squidprime/data/colors.*.png - Some alternate gradients/swatches for varying the colour scheme.
+
 ## Resources
 
-**[FadeCandy](https://github.com/scanlime/fadecandy)**: I found this WS2812B LED controller, its libraries and its server to be particularly easy to use, built on the Open Pixel Control protocol. My sketch is based very closely on [this example](https://github.com/scanlime/fadecandy/tree/master/examples/processing/grid32x16z_particle_fft_input), and the [other Processing examples](https://github.com/scanlime/fadecandy/tree/master/examples/processing) are really useful. These sketches can be used with other OPC-compatible controllers, or with [Open Lighting Architecture](https://www.openlighting.org/ola/) for a much wider range of controllers.
+**[FadeCandy](https://github.com/scanlime/fadecandy)**: I found this WS2812B LED controller, its libraries and its server to be particularly easy to use. It's built on the Open Pixel Control protocol, so anything else that produces OPC would be able to use the FadeCandy. , and the [other Processing examples](https://github.com/scanlime/fadecandy/tree/master/examples/processing) are really useful. These sketches can be used with other OPC-compatible controllers, or with [Open Lighting Architecture](https://www.openlighting.org/ola/) for a much wider range of controllers.
 
 **[NexusUI](https://github.com/lsu-emdm/nexusUI/)**: Originally I was using OSC iPhone apps, but this approach wound up being more flexible and universal across multiple devices. In case the artists found the installation distracting, I gave them instructions for how to access to control panel from their phones so they could turn it down, change the balance, etc.. The [nx-AjaxDemo](https://github.com/lsu-emdm/nx-AjaxDemo) provides the PHP OSC handler for the front-end JavaScript UI, and has a lot of useful examples (though with an earlier version of the UI).
 
@@ -25,6 +35,8 @@ To do: Add Wi-Fi configuration, pictures & video, and a whole lot of code cleanu
 **[Using VNC on the Pi](https://www.realvnc.com/docs/raspberry-pi.html)**: The other headless route is to actually use a GUI, run Processing 3.0+ and play your sketch within that application. You then connect via a VNC client from a laptop or smartphone to get things running. When I tried this route, I found RealVNC from my phone as a reliable-enough client.
 
 **[Using a Pi 3 as a Wireless Access Point](https://frillip.com/using-your-raspberry-pi-3-as-a-wifi-access-point-with-hostapd/)**: I used my own self-contained Wi-Fi network to eliminate reliance on spotty Wi-Fi on site. I was able to fully test everything from home, so all I needed on arrival was power.
+
+**[LEDs from Shenzhen Rita Lighting Ltd](https://www.aliexpress.com/item/Addressable-DC5V-WS2812B-IP68-pixel-node-epoxy-resin-filled-50pcs-a-string-transparent-cover/32366638195.html)**: I wanted something waterproofed and pre-wired (to save a lot of soldering time) in lengths the FadeCandy can use (=<64 LEDs). The throughhole mount was useful for the clamshell, and the 10cm spacing made the illusion of glowing suckers in the tentacles. The IP68 waterproofing was handy, as the site was quite humid, had prolonged rainstorms and the structure was not perfectly water-tight. I used both the clear (for the clamshell) and diffused (for the tentacles) options.
 
 
 
